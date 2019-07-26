@@ -1,4 +1,4 @@
-package com.reactlibrary;
+package com.rndatepicker;
 
 import android.app.TimePickerDialog;
 import android.widget.TimePicker;

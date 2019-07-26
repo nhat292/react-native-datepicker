@@ -463,7 +463,8 @@ DatePicker.defaultProps = {
   hideText: false,
   placeholder: '',
   TouchableComponent: TouchableHighlight,
-  modalOnResponderTerminationRequest: e => true
+  modalOnResponderTerminationRequest: e => true,
+  minuteInterval: 1
 };
 
 DatePicker.propTypes = {

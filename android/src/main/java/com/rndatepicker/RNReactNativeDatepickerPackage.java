@@ -1,5 +1,5 @@
 
-package com.reactlibrary;
+package com.rndatepicker;
 
 import java.util.ArrayList;
 import java.util.Collections;
