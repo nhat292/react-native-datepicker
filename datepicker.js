@@ -280,11 +280,14 @@ class DatePicker extends Component {
         // 选时间
 
         let timeMoment = Moment(this.state.date);
+        const {minuteInterval} = this.props;
 
-        TimePickerModule.open(
-          timeMoment.hour(), 
-          timeMoment.minutes(), 
-          is24Hour).then(this.onTimePicked);
+        TimePickerModule.open({
+          hour: timeMoment.hour(), 
+          minute: timeMoment.minutes(),
+          is24HourView: is24Hour,
+          minuteInterval: minuteInterval
+        }).then(this.onTimePicked);
       } else if (mode === 'datetime') {
         // 选日期和时间
 
@@ -489,7 +492,8 @@ DatePicker.propTypes = {
   modalOnResponderTerminationRequest: PropTypes.func,
   is24Hour: PropTypes.bool,
   getDateStr: PropTypes.func,
-  locale: PropTypes.string
+  locale: PropTypes.string,
+  minuteInterval: PropTypes.number
 };
 
 export default DatePicker;
