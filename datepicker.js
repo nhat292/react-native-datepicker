@@ -11,7 +11,8 @@ import {
   DatePickerIOS,
   Platform,
   Animated,
-  Keyboard
+  Keyboard,
+  NativeModules
 } from 'react-native';
 import Style from './style';
 import Moment from 'moment';
@@ -23,6 +24,8 @@ const FORMATS = {
 };
 
 const SUPPORTED_ORIENTATIONS = ['portrait', 'portrait-upside-down', 'landscape', 'landscape-left', 'landscape-right'];
+
+const TimePickerModule = NativeModules.TimePickerModule;
 
 class DatePicker extends Component {
   constructor(props) {
@@ -278,12 +281,10 @@ class DatePicker extends Component {
 
         let timeMoment = Moment(this.state.date);
 
-        TimePickerAndroid.open({
-          hour: timeMoment.hour(),
-          minute: timeMoment.minutes(),
-          is24Hour: is24Hour,
-          mode: androidMode
-        }).then(this.onTimePicked);
+        TimePickerModule.open(
+          timeMoment.hour(), 
+          timeMoment.minutes(), 
+          is24Hour).then(this.onTimePicked);
       } else if (mode === 'datetime') {
         // 选日期和时间
 
