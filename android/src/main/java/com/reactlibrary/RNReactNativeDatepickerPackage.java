@@ -16,6 +16,7 @@ public class RNReactNativeDatepickerPackage implements ReactPackage {
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
       List<NativeModule> modules = new ArrayList<>();
         modules.add(new TimePickerModule(reactContext));
+        modules.add(new RNReactNativeDatepicker(reactContext));
         return modules;
     }
 
