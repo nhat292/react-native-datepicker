@@ -28,7 +28,7 @@ public class TimePickerModule extends ReactContextBaseJavaModule {
         int minute = readableMap.getInt("minute");
         boolean is24HourView = readableMap.getBoolean("is24HourView");
         int minuteInterval = readableMap.getInt("minuteInterval");
-        CustomTimePickerDialog customTimePickerDialog = new CustomTimePickerDialog(getReactApplicationContext(), new TimePickerDialog.OnTimeSetListener() {
+        CustomTimePickerDialog customTimePickerDialog = new CustomTimePickerDialog(getCurrentActivity(), new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker timePicker, int hourOfDay, int minute) {
                 WritableMap map = Arguments.createMap();
