@@ -25,8 +25,6 @@ const FORMATS = {
 
 const SUPPORTED_ORIENTATIONS = ['portrait', 'portrait-upside-down', 'landscape', 'landscape-left', 'landscape-right'];
 
-const TimePickerModule = NativeModules.TimePickerModule;
-
 class DatePicker extends Component {
   constructor(props) {
     super(props);
@@ -281,6 +279,7 @@ class DatePicker extends Component {
 
         let timeMoment = Moment(this.state.date);
         const {minuteInterval} = this.props;
+        const TimePickerModule = NativeModules.TimePickerModule;
 
         TimePickerModule.open({
           hour: timeMoment.hour(), 
