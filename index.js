@@ -1,6 +1,3 @@
+import DatePicker from "./datepicker";
 
-import { NativeModules } from 'react-native';
-
-const { RNReactNativeDatepicker } = NativeModules;
-
-export default RNReactNativeDatepicker;
+export default DatePicker;
